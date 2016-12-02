@@ -10,7 +10,7 @@ body{
 	position: fixed !important;
 }
 
-h4 {
+h4.background {
    
    width: 100%; 
    text-align: left; 
@@ -19,6 +19,9 @@ h4 {
    margin: 10px 0 20px; 
    padding-top: 15px;
 } 
+h4.small{
+	width: 80% !important;
+}
 
 h4 span { 
 	background:#fff; 
@@ -28,10 +31,21 @@ h4 span {
 .share{
 	font-size: 20px;
 }
+input.sameline{
+	
+}
 .input-group{
 	margin-top: 10px;
 }
 .toggle{
 	float:right;
-
+}
+.toggle.ios, .toggle-on.ios, .toggle-off.ios { 
+	border-radius: 9px; 
+}
+.toggle.ios .toggle-handle { 
+	border-radius: 9px;
+}
+.round{
+	border-radius: 25px;
 }

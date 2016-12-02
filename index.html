@@ -22,9 +22,7 @@
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="js/ie-emulation-modes-warning.js"></script>
-    <!-- Font Awesome  -->
-    <script src="https://use.fontawesome.com/a890963e34.js"></script>
-
+    <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
@@ -81,6 +79,18 @@
 		      }
 
 	</script>
+	<script>
+		    	$('#compare-toggle').prop('checked', true).change(function() {
+			   	$('.search').prop("disabled", false);   
+			   	$('.compare-grp').prop("disabled", true);
+			   	 	 
+			 });
+		
+			 $('#compare-toggle').prop('checked', false).change(function() {
+			   	 $('.search').prop("disabled", true);
+			   	 $('.compare-grp').prop("disabled", false);
+			 });
+	</script>
 	<!-- Load Google chart api -->
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script type="text/javascript">
@@ -134,8 +144,7 @@
 			users_chart.draw(users_data, users_options);
 		}
         </script>
-        <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
-	<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+        
   </head>
 
   <body>
@@ -148,9 +157,9 @@
 		<div class="tab-content">
 			  <div id="controls" class="tab-pane fade in active">
 			         <div class="input-group">
-					<input type="text" name="srchname" class="form-control search-query" placeholder="Search..." /> 
+					<input type="text" name="srchname" class="form-control search-query search" placeholder="Search..." /> 
 					<span class="input-group-btn">
-				    		<button type="submit" class="btn btn-primary"> Search</button>
+				    		<button type="submit"  class="btn btn-primary search"> Search</button>
 				    	</span>
 				 </div>
 			        <input type="checkbox" name="checkbox"> Search Exact Keyword
@@ -164,19 +173,20 @@
 					<input class="form-control" id="from" name="from" type="text" placeholder="Keyword or #Hashtag">
 					<span class="input-group-addon"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i></span>
 				</div>
-				Live Mode <input data-toggle="toggle" type="checkbox" class="toggle" data-size="mini"><br/>
-				Refresh When changes <input data-toggle="toggle" type="checkbox" class="toggle" data-size="mini">
-			    	<h4 class="background"><span>Compare Topics</span>  <input checked data-toggle="toggle" type="checkbox" class="toggle" data-size="mini">  </h4>
+				Live Mode <input data-toggle="toggle" type="checkbox" data-onstyle="info" class="toggle" data-size="mini" data-style="ios"><br/>
+				Refresh When changes <input data-toggle="toggle" data-onstyle="info" type="checkbox" class="toggle" data-size="mini" data-style="ios">
+			    	<h4 class="background small"><span>Compare Topics</span><input checked data-onstyle="info" id="compare-toggle" data-style="ios" data-toggle="toggle" type="checkbox" class="toggle sameline" data-size="mini"></h4>
+			    	
 			    	<div class="input-group margin-bottom-sm">
-					<input class="form-control" type="text" placeholder="Keyword or #Hashtag">
-					<span class="input-group-addon"><i class="fa  fa-check-circle fa-fw" aria-hidden="true"></i></span>
+					<input class="form-control compare-grp round" type="text" placeholder="Keyword or #Hashtag">
+					<span class="input-group-addon round"><i class="fa  fa-check-circle fa-fw" aria-hidden="true"></i></span>
 				</div>
 				<div class="input-group margin-bottom-sm">
-					<input class="form-control" type="text" placeholder="Keyword or #Hashtag">
-					<span class="input-group-addon"><i class="fa  fa-check-circle fa-fw" aria-hidden="true"></i></span>
+					<input class="form-control compare-grp round" type="text" placeholder="Keyword or #Hashtag">
+					<span class="input-group-addon round"><i class="fa  fa-check-circle fa-fw" aria-hidden="true"></i></span>
 				</div>
-				<a class="btn btn-info" href="#">Compare </a>
-			    	<h4 class="background"><span>Share your result</span></h4>
+				<a class="btn btn-info compare-grp" href="#">Compare </a>
+			    	<h4 class="background small"><span>Share your result</span></h4>
 			    	<div class="share">
 				    	<a href="#"><i class="fa  fa-dribbble fa-lg"></i></a>
 				    	<a href="#"><i class="fa fa-twitter-square fa-lg"></i></a>
@@ -203,6 +213,8 @@
   		<div id="map">
   		</div>
   	</div>
+  	    <!-- Font Awesome  -->
+        <script src="https://use.fontawesome.com/a890963e34.js"></script>
 	<!-- Maps Javascript -->
 	<script async defer
 	    	src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBUPdJRH0UaoNJ3ay_g0gAsUAy4NPZt8aQ&callback=initMap">
@@ -216,5 +228,6 @@
     	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     	<script src="js/ie10-viewport-bug-workaround.js"></script>
 	<script src="js/bootstrap-datepicker.js"></script>
+	<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
   </body>
 </html>
