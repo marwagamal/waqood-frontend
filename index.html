@@ -179,12 +179,12 @@
 				    		<button type="submit"  class="btn btn-primary search"> Search</button>
 				    	</span>
 				 </div>
-			        <input type="checkbox" name="checkbox"> Search Exact Keyword
+			        <input type="checkbox" name="checkbox"  class="search"> Search Exact Keyword
 			        <p>22 Tweets by searching</p>
 			    	<h4 class="background"><span>View</span></h4>
-			    	<input type="radio" name="mapview"> Clusters<br/>
-			    	<input type="radio" name="mapview"> Heatmap<br/>
-			    	<input type="radio" name="mapview"> Pins<br/>
+			    	<input type="radio" name="mapview" class="search"> Clusters<br/>
+			    	<input type="radio" name="mapview" class="search"> Heatmap<br/>
+			    	<input type="radio" name="mapview" class="search"> Pins<br/>
 			    	<h4 class="background"><span>Date</span></h4>
 			     	<div class="input-group margin-bottom-sm">
 					<input class="form-control" id="from" name="from" type="text" placeholder="Keyword or #Hashtag">
@@ -196,16 +196,20 @@
 			    	
 			    	<div class="input-group margin-bottom-sm">
 					<input class="form-control compare-grp round" type="text" placeholder="Keyword or #Hashtag">
-					<span class="input-group-addon round"><i class="fa  fa-check-circle fa-fw" aria-hidden="true"></i></span>
-				</div>
+					<span class="input-group-btn">
+				    		<button type="submit"  class="btn btn-info compare-grp round"> <i class="fa fa-check fa-lg" aria-hidden="true"></i></button>
+				    	</span>
+				 </div>
 				<div class="input-group margin-bottom-sm">
 					<input class="form-control compare-grp round" type="text" placeholder="Keyword or #Hashtag">
-					<span class="input-group-addon round"><i class="fa  fa-check-circle fa-fw" aria-hidden="true"></i></span>
-				</div>
+					<span class="input-group-btn">
+				    		<button type="submit"  class="btn btn-danger compare-grp round"> <i class="fa fa-check fa-lg" aria-hidden="true"></i></button>
+				    	</span>
+				</div><br/>
 				<button class="btn btn-info compare-grp" onclick="">Compare </button>
 			    	<h4 class="background small"><span>Share your result</span></h4>
 			    	<div class="share">
-				    	<a href="#" class="wb"><i class="fa  fa-dribbble "aria-hidden="true"></i></a>
+				    	<a href="#" class="wb"><i class="fa fa-dribbble "aria-hidden="true"></i></a>
 				    	<a href="#" class="tw"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i></a>
 				    	<a href="#" class="fb"><i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i></a>
 				    	<a href="#" class="go"><i class="fa fa-google-plus-square fa-lg" aria-hidden="true"></i></a>
