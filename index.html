@@ -106,7 +106,24 @@
 				   	 $('.search').prop("disabled", false);
 				   	 $('.compare-grp').prop("disabled", true);
 				 }
+			$('#keyword').on('change', function() {
+	   			 var keyword = $('#keyword').val();
+	   			 var button = $("<input>")
+			       		.attr("class", "btn btn-info btn-xs")
+			       		.val(keyword);
+		       		 $('#keyword-result').html($(button));
+			});
+			$('#hashtag').on('change', function() {
+	   			 var keyword = $('#hashtag').val();
+	   			 var button = $("<input>")
+			       		.attr("class", "btn btn-danger btn-xs")
+			       		.val(keyword);
+		       		 $('#hashtag-result').html($(button));
+			})
+		
 		});
+		
+		;
 	</script>
 	<!-- Load Google chart api -->
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -194,31 +211,33 @@
 				Refresh When changes <input data-toggle="toggle" data-onstyle="info" type="checkbox" class="toggle" data-size="mini" data-style="ios">
 			    	<h4 class="background small"><span>Compare Topics</span><input data-onstyle="info" id="compare-toggle" data-style="ios" data-toggle="toggle" type="checkbox" class="toggle sameline" data-size="mini"></h4>
 			    	
-			    	<div class="input-group margin-bottom-sm">
-					<input class="form-control compare-grp round" type="text" placeholder="Keyword or #Hashtag">
+			    	<div class="input-group">
+					<input class="form-control compare-grp round" id="keyword" type="text" placeholder="Keyword or #Hashtag">
 					<span class="input-group-btn">
 				    		<button type="submit"  class="btn btn-info compare-grp round"> <i class="fa fa-check fa-lg" aria-hidden="true"></i></button>
 				    	</span>
-				 </div>
+				    	
+				 </div><div id="keyword-result" class="result"></div>
 				<div class="input-group margin-bottom-sm">
-					<input class="form-control compare-grp round" type="text" placeholder="Keyword or #Hashtag">
+					<input class="form-control compare-grp round" id="hashtag" type="text" placeholder="Keyword or #Hashtag">
 					<span class="input-group-btn">
 				    		<button type="submit"  class="btn btn-danger compare-grp round"> <i class="fa fa-check fa-lg" aria-hidden="true"></i></button>
 				    	</span>
-				</div><br/>
+				</div>
+				<div id="hashtag-result" class="result"></div><br/>
 				<button class="btn btn-info compare-grp" onclick="">Compare </button>
 			    	<h4 class="background small"><span>Share your result</span></h4>
 			    	<div class="share">
-				    	<a href="#" class="wb"><i class="fa fa-dribbble "aria-hidden="true"></i></a>
-				    	<a href="#" class="tw"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i></a>
-				    	<a href="#" class="fb"><i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i></a>
-				    	<a href="#" class="go"><i class="fa fa-google-plus-square fa-lg" aria-hidden="true"></i></a>
-				    	<a href="#" class="ln"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
+				    	<a href="" class="wb"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+				    	<a href="" class="tw"><i class="fa fa-twitter-square fa-lg" aria-hidden="true"></i></a>
+				    	<a href="" class="fb"><i class="fa fa-facebook-square fa-lg" aria-hidden="true"></i></a>
+				    	<a href="" class="go"><i class="fa fa-google-plus-square fa-lg" aria-hidden="true"></i></a>
+				    	<a href="" class="ln"><i class="fa fa-linkedin-square fa-lg" aria-hidden="true"></i></a>
 				</div>
 			  </div>
 			  <div id="stats" class="tab-pane fade">
 			    	<h4 class="background"><span>Top Hashtags</span></h4>
-			    	<div id="hashtags" style="width:80px,height:80px"></div>
+			    	<div id="hashtags"></div>
 			    	
 			   	<h4 class="background"><span>Top Influencers </span></h4>
 			    	<div id="influencers"></div>
