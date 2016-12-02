@@ -1,0 +1,37 @@
+body{
+	font-size:14px;
+	line-height: 1.8em;
+}
+#map {
+	height: 100%;
+	width: 100%;
+	padding: 0px;
+	margin: 0px;
+	position: fixed !important;
+}
+
+h4 {
+   
+   width: 100%; 
+   text-align: left; 
+   border-bottom: 2px solid #28a6ec; 
+   line-height: 0.1em;
+   margin: 10px 0 20px; 
+   padding-top: 15px;
+} 
+
+h4 span { 
+	background:#fff; 
+	padding:0 10px; 
+	font-size: 16px;
+}
+.share{
+	font-size: 20px;
+}
+.input-group{
+	margin-top: 10px;
+}
+.toggle{
+	float:right;
+
+}
