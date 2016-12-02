@@ -1,6 +1,6 @@
 body{
-	font-size:14px;
-	line-height: 1.8em;
+	font-size:12px;
+	line-height: 2em;
 }
 #map {
 	height: 100%;
@@ -20,13 +20,13 @@ h4.background {
    padding-top: 15px;
 } 
 h4.small{
-	width: 80% !important;
+	width: 70% !important;
 }
 
 h4 span { 
 	background:#fff; 
 	padding:0 10px; 
-	font-size: 16px;
+	font-size: 14px;
 }
 .share{
 	font-size: 20px;
@@ -39,12 +39,6 @@ input.sameline{
 }
 .toggle{
 	float:right;
-}
-.toggle.ios, .toggle-on.ios, .toggle-off.ios { 
-	border-radius: 9px; 
-}
-.toggle.ios .toggle-handle { 
-	border-radius: 9px;
 }
 .round{
 	border-radius: 25px;
@@ -64,28 +58,16 @@ a.ln{
 a.wb{
 	background-color: #00A0DC ;
 	color: #FFF;
-	padding: 0px 2px 0px 2px;
+	padding-right: 2px;
+	padding-left: 2px;
 }
 a.go{
 	background-color: #FFF ;
 	color: #d9534f;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+input[type="text"]{
+	font-size:12px;
+}
 
 
 

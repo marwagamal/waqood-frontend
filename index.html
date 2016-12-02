@@ -80,16 +80,33 @@
 
 	</script>
 	<script>
-		    	$('#compare-toggle').prop('checked', true).change(function() {
-			   	$('.search').prop("disabled", false);   
-			   	$('.compare-grp').prop("disabled", true);
-			   	 	 
-			 });
-		
-			 $('#compare-toggle').prop('checked', false).change(function() {
-			   	 $('.search').prop("disabled", true);
-			   	 $('.compare-grp').prop("disabled", false);
-			 });
+	 	$( function() {
+		 	$('#compare-toggle').change(function() {
+			    	if($(this).prop('checked'))
+			    	{
+				   	$('.search').prop("disabled", true);   
+				   	$('.compare-grp').prop("disabled", false);
+				   	 	 
+				 }
+				else{
+				 
+				   	 $('.search').prop("disabled", false);
+				   	 $('.compare-grp').prop("disabled", true);
+				 }
+			});
+			
+			if($(this).prop('checked'))
+			    	{
+				   	$('.search').prop("disabled", true);   
+				   	$('.compare-grp').prop("disabled", false);
+				   	 	 
+				 }
+				else{
+				 
+				   	 $('.search').prop("disabled", false);
+				   	 $('.compare-grp').prop("disabled", true);
+				 }
+		});
 	</script>
 	<!-- Load Google chart api -->
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
@@ -175,7 +192,7 @@
 				</div>
 				Live Mode <input data-toggle="toggle" type="checkbox" data-onstyle="info" class="toggle" data-size="mini" data-style="ios"><br/>
 				Refresh When changes <input data-toggle="toggle" data-onstyle="info" type="checkbox" class="toggle" data-size="mini" data-style="ios">
-			    	<h4 class="background small"><span>Compare Topics</span><input checked data-onstyle="info" id="compare-toggle" data-style="ios" data-toggle="toggle" type="checkbox" class="toggle sameline" data-size="mini"></h4>
+			    	<h4 class="background small"><span>Compare Topics</span><input data-onstyle="info" id="compare-toggle" data-style="ios" data-toggle="toggle" type="checkbox" class="toggle sameline" data-size="mini"></h4>
 			    	
 			    	<div class="input-group margin-bottom-sm">
 					<input class="form-control compare-grp round" type="text" placeholder="Keyword or #Hashtag">
@@ -185,7 +202,7 @@
 					<input class="form-control compare-grp round" type="text" placeholder="Keyword or #Hashtag">
 					<span class="input-group-addon round"><i class="fa  fa-check-circle fa-fw" aria-hidden="true"></i></span>
 				</div>
-				<a class="btn btn-info compare-grp" href="#">Compare </a>
+				<button class="btn btn-info compare-grp" onclick="">Compare </button>
 			    	<h4 class="background small"><span>Share your result</span></h4>
 			    	<div class="share">
 				    	<a href="#" class="wb"><i class="fa  fa-dribbble "aria-hidden="true"></i></a>
