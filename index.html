@@ -60,7 +60,7 @@
 				</div>
 				Live Mode <input data-toggle="toggle" type="checkbox" data-onstyle="info" class="toggle" data-size="mini" data-style="ios"><br/>
 				Refresh When changes <input data-toggle="toggle" data-onstyle="info" type="checkbox" class="toggle" data-size="mini" data-style="ios">
-			    	<h4 class="background small"><span>Compare Topics</span><input data-onstyle="info" id="compare-toggle" data-style="ios" data-toggle="toggle" type="checkbox" class="toggle sameline" data-size="mini"></h4>
+			    	<h4 class="background"><span>Compare Topics</span><input data-onstyle="info" id="compare-toggle" data-style="ios" data-toggle="toggle" type="checkbox" class="toggle sameline" data-size="mini"></h4>
 			    	
 			    	<div class="input-group">
 					<input class="form-control compare-grp round" id="keyword" type="text" placeholder="Keyword or #Hashtag">
@@ -68,14 +68,14 @@
 				    		<button type="submit"  class="btn btn-info compare-grp round"> <i class="fa fa-check fa-lg" aria-hidden="true"></i></button>
 				    	</span>
 				    	
-				 </div><div id="keyword-result" class="result extra"></div>
+				 </div><div id="keyword-result" class="result"></div>
 				<div class="input-group margin-bottom-sm">
 					<input class="form-control compare-grp round" id="hashtag" type="text" placeholder="Keyword or #Hashtag">
 					<span class="input-group-btn">
 				    		<button type="submit"  class="btn btn-danger compare-grp round"> <i class="fa fa-check fa-lg" aria-hidden="true"></i></button>
 				    	</span>
 				</div>
-				<div id="hashtag-result" class="result extra"></div><br/>
+				<div id="hashtag-result" class="result"></div><br/>
 				<button class="btn btn-info compare-grp" onclick="">Compare </button>
 			    	<h4 class="background small"><span>Share your result</span></h4>
 			    	<div class="share">
@@ -166,13 +166,13 @@
 			    	if($(this).prop('checked'))
 			    	{
 				   	$('.search').prop("disabled", true);   
-				   	$('.compare-grp').prop("disabled", false);
-				   	 	 
+				   	$('.compare-grp').prop("disabled", false); 
 				 }
 				else{
 				 
 				   	 $('.search').prop("disabled", false);
 				   	 $('.compare-grp').prop("disabled", true);
+				   	 $('.extra').remove();
 				 }
 			});
 			// Default compare toggle action -- to be set on page load
@@ -190,7 +190,7 @@
 			$('#keyword').on('change', function() {
 	   			 var keyword = $('#keyword').val();
 	   			 var button = $("<input>")
-			       		.attr("class", "btn btn-info btn-xs")
+			       		.attr("class", "btn btn-info btn-xs extra")
 			       		.val(keyword);
 		       		 $('#keyword-result').html($(button));
 			});
@@ -198,7 +198,7 @@
 			$('#hashtag').on('change', function() {
 	   			 var keyword = $('#hashtag').val();
 	   			 var button = $("<input>")
-			       		.attr("class", "btn btn-danger btn-xs")
+			       		.attr("class", "btn btn-danger btn-xs extra")
 			       		.val(keyword);
 		       		 $('#hashtag-result').html($(button));
 			})
