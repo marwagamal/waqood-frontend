@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,10 +14,9 @@
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
-
+    
     <!-- Custom styles for this template -->
     <link href="style.css" rel="stylesheet">
-	<link href="css/datepicker.css" rel="stylesheet">
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="js/ie-emulation-modes-warning.js"></script>
@@ -28,156 +26,9 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-
+	<link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
 	<script src="js/jquery-1.12.4.js"></script>
 	<script src="js/jquery-ui.js"></script>
-	<script>
-	    $( function() {
-		    var dateFormat = "mm/dd/yy",
-		      from = $( "#from" )
-			.datepicker({
-			  defaultDate: "+1w",
-			  changeMonth: true,
-			  numberOfMonths: 3
-			})
-			.on( "change", function() {
-			  to.datepicker( "option", "minDate", getDate( this ) );
-			}),
-		      to = $( "#to" ).datepicker({
-			defaultDate: "+1w",
-			changeMonth: true,
-			numberOfMonths: 3
-		      })
-		      .on( "change", function() {
-			from.datepicker( "option", "maxDate", getDate( this ) );
-		      });
-		 
-		    function getDate( element ) {
-		      var date;
-		      try {
-			date = $.datepicker.parseDate( dateFormat, element.value );
-		      } catch( error ) {
-			date = null;
-		      }
-		 
-		      return date;
-		    }
-		  } );
-	</script>
-	<script>
-		 function initMap() {
-			var waqood = {lat: 21.5082667, lng: 39.1729415};
-			var center = {lat: 26.7349464, lng: 40.4425176};
-			var map = new google.maps.Map(document.getElementById('map'), {
-			  zoom: 7,
-			  center: center
-			});
-			var marker = new google.maps.Marker({
-			  position: waqood,
-			  map: map
-			});
-		      }
-
-	</script>
-	<script>
-	 	$( function() {
-		 	$('#compare-toggle').change(function() {
-			    	if($(this).prop('checked'))
-			    	{
-				   	$('.search').prop("disabled", true);   
-				   	$('.compare-grp').prop("disabled", false);
-				   	 	 
-				 }
-				else{
-				 
-				   	 $('.search').prop("disabled", false);
-				   	 $('.compare-grp').prop("disabled", true);
-				 }
-			});
-			
-			if($(this).prop('checked'))
-			    	{
-				   	$('.search').prop("disabled", true);   
-				   	$('.compare-grp').prop("disabled", false);
-				   	 	 
-				 }
-				else{
-				 
-				   	 $('.search').prop("disabled", false);
-				   	 $('.compare-grp').prop("disabled", true);
-				 }
-			$('#keyword').on('change', function() {
-	   			 var keyword = $('#keyword').val();
-	   			 var button = $("<input>")
-			       		.attr("class", "btn btn-info btn-xs")
-			       		.val(keyword);
-		       		 $('#keyword-result').html($(button));
-			});
-			$('#hashtag').on('change', function() {
-	   			 var keyword = $('#hashtag').val();
-	   			 var button = $("<input>")
-			       		.attr("class", "btn btn-danger btn-xs")
-			       		.val(keyword);
-		       		 $('#hashtag-result').html($(button));
-			})
-		
-		});
-		
-		;
-	</script>
-	<!-- Load Google chart api -->
-        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-        <script type="text/javascript">
-             	google.charts.load('current', {'packages':['corechart']});
-      		google.charts.setOnLoadCallback(drawChart);
-
-            	function drawChart() {
-                	var data = google.visualization.arrayToDataTable([
-			  ['Hashtag', 'Percentage'], ['الدمام',  20],  ['الطائف',  20],  ['القطيف',  20], ['الحلية', 20],  ['الأحساء', 20]
-			]);
-			var options = {
-				pieHole: 0.1,
-				legend: 'none',
-				chartArea: {width: 80, height:80}
-			};
-			var chart = new google.visualization.PieChart(document.getElementById('hashtags'));
-			chart.draw(data, options);
-			
-			
-			var influencers_data = google.visualization.arrayToDataTable([
-			  ['Hashtag', 'Percentage'], ['LL',  0.5],  ['f_',  1],  ['m',  1], ['alh', 40],  ['icr', 40]
-			]);
-			var influencers_options = {
-				pieHole: 0.1,
-				legend: 'none',
-				slices: {  
-					5: {offset: 0.1},
-					4: {offset: 0.1},
-					},
-				chartArea: {width: 80, height:80}
-
-			};
-			var influencers_chart = new google.visualization.PieChart(document.getElementById('influencers'));
-			influencers_chart.draw(influencers_data, influencers_options);
-			
-			
-			
-			var users_data = google.visualization.arrayToDataTable([
-			  ['Hashtag', 'Percentage'], ['LL',  0.5],  ['f_',  1],  ['m',  1], ['alh', 10], ['fdfs', 10],  ['icr', 40]
-			]);
-			var users_options = {
-				pieHole: 0.1,
-				chartArea: {width: 80, height:80},
-				legend: 'none',
-				slices: {  
-					5: {offset: 0.1},
-					}
-
-			};
-			var users_chart = new google.visualization.PieChart(document.getElementById('users'));
-			users_chart.draw(users_data, users_options);
-		}
-        </script>
         
   </head>
 
@@ -204,7 +55,7 @@
 			    	<input type="radio" name="mapview" class="search"> Pins<br/>
 			    	<h4 class="background"><span>Date</span></h4>
 			     	<div class="input-group margin-bottom-sm">
-					<input class="form-control" id="from" name="from" type="text" placeholder="Keyword or #Hashtag">
+					<input class="form-control" id="from" name="from" type="text" placeholder="11/27/2016 - 12/3/2016">
 					<span class="input-group-addon"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i></span>
 				</div>
 				Live Mode <input data-toggle="toggle" type="checkbox" data-onstyle="info" class="toggle" data-size="mini" data-style="ios"><br/>
@@ -217,14 +68,14 @@
 				    		<button type="submit"  class="btn btn-info compare-grp round"> <i class="fa fa-check fa-lg" aria-hidden="true"></i></button>
 				    	</span>
 				    	
-				 </div><div id="keyword-result" class="result"></div>
+				 </div><div id="keyword-result" class="result extra"></div>
 				<div class="input-group margin-bottom-sm">
 					<input class="form-control compare-grp round" id="hashtag" type="text" placeholder="Keyword or #Hashtag">
 					<span class="input-group-btn">
 				    		<button type="submit"  class="btn btn-danger compare-grp round"> <i class="fa fa-check fa-lg" aria-hidden="true"></i></button>
 				    	</span>
 				</div>
-				<div id="hashtag-result" class="result"></div><br/>
+				<div id="hashtag-result" class="result extra"></div><br/>
 				<button class="btn btn-info compare-grp" onclick="">Compare </button>
 			    	<h4 class="background small"><span>Share your result</span></h4>
 			    	<div class="share">
@@ -267,7 +118,162 @@
     	<script src="js/bootstrap.min.js"></script>
     	<!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     	<script src="js/ie10-viewport-bug-workaround.js"></script>
-	<script src="js/bootstrap-datepicker.js"></script>
+    	<!-- Include Date Range Picker -->
+    	<script type="text/javascript" src="http://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+	<script type="text/javascript" src="http://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.js"></script>
 	<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
+	<script>
+		// initialize date picker with custom ranges 
+		$('#from').daterangepicker({
+		      "ranges": {
+			"Today": [
+			    "12/03/2016",
+			    "12/03/2016"
+			],
+			"Yesterday": [
+			    "12/02/2016",
+			    "12/03/2016"
+			],
+			"Last 7 Days": [
+			    "11/27/2016",
+			    "12/03/2016"
+			],
+			"Last 30 Days": [
+			    "11/04/2016",
+			    "12/03/2016"
+			],
+			"This Month": [
+			    "11/30/2016",
+			    "12/31/2016"
+			],
+			"Last Month": [
+			    "10/31/2016",
+			    "11/30/2016"
+			]
+		    },
+		    "alwaysShowCalendars": true,
+		    "startDate": "12/01/2016",
+		    "endDate": "12/03/2016",
+		    "applyClass": "btn-info"
+		}, function(start, end, label) {
+		  console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
+		});
+	</script>
+	<script>
+	 	$( function() {
+	 		// Compare toggle changed - check if enabled or disabled then activate corresponding section 
+		 	$('#compare-toggle').change(function() {
+			    	if($(this).prop('checked'))
+			    	{
+				   	$('.search').prop("disabled", true);   
+				   	$('.compare-grp').prop("disabled", false);
+				   	 	 
+				 }
+				else{
+				 
+				   	 $('.search').prop("disabled", false);
+				   	 $('.compare-grp').prop("disabled", true);
+				 }
+			});
+			// Default compare toggle action -- to be set on page load
+			if($(this).prop('checked'))
+			    	{
+				   	$('.search').prop("disabled", true);   
+				   	$('.compare-grp').prop("disabled", false);
+				 }
+				else{
+				 
+				   	 $('.search').prop("disabled", false);
+				   	 $('.compare-grp').prop("disabled", true);
+				 }
+			// Add button with text
+			$('#keyword').on('change', function() {
+	   			 var keyword = $('#keyword').val();
+	   			 var button = $("<input>")
+			       		.attr("class", "btn btn-info btn-xs")
+			       		.val(keyword);
+		       		 $('#keyword-result').html($(button));
+			});
+			// Add button with text
+			$('#hashtag').on('change', function() {
+	   			 var keyword = $('#hashtag').val();
+	   			 var button = $("<input>")
+			       		.attr("class", "btn btn-danger btn-xs")
+			       		.val(keyword);
+		       		 $('#hashtag-result').html($(button));
+			})
+		
+		});
+		
+	</script>
+	<script>
+		// Initialize google maps 
+		 function initMap() {
+			var waqood = {lat: 21.5082667, lng: 39.1729415};
+			var center = {lat: 26.7349464, lng: 40.4425176};
+			var map = new google.maps.Map(document.getElementById('map'), {
+			  zoom: 7,
+			  center: center
+			});
+			var marker = new google.maps.Marker({
+			  position: waqood,
+			  map: map
+			});
+		      }
+	</script>
+	<!-- Load Google chart api -->
+        <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+        <script type="text/javascript">
+             	google.charts.load('current', {'packages':['corechart']});
+      		google.charts.setOnLoadCallback(drawChart);
+
+            	function drawChart() {
+            	// First pie chart with cities data 
+                	var data = google.visualization.arrayToDataTable([
+			  ['Hashtag', 'Percentage'], ['الدمام',  20],  ['الطائف',  20],  ['القطيف',  20], ['الحلية', 20],  ['الأحساء', 20]
+			]);
+			var options = {
+				pieHole: 0.1,
+				legend: 'none',
+				chartArea: {width: 80, height:80}
+			};
+			var chart = new google.visualization.PieChart(document.getElementById('hashtags'));
+			chart.draw(data, options);
+			
+			// Second pie chart with some random data on influencers
+			var influencers_data = google.visualization.arrayToDataTable([
+			  ['Hashtag', 'Percentage'], ['LL',  0.5],  ['f_',  1],  ['m',  1], ['alh', 40],  ['icr', 40]
+			]);
+			var influencers_options = {
+				pieHole: 0.1,
+				legend: 'none',
+				slices: {  
+					5: {offset: 0.1},
+					4: {offset: 0.1},
+					},
+				chartArea: {width: 80, height:80}
+
+			};
+			var influencers_chart = new google.visualization.PieChart(document.getElementById('influencers'));
+			influencers_chart.draw(influencers_data, influencers_options);
+			
+			
+			// Third pie chart with data on top engaged users 
+			var users_data = google.visualization.arrayToDataTable([
+			  ['Hashtag', 'Percentage'], ['LL',  0.5],  ['f_',  1],  ['m',  1], ['alh', 10], ['fdfs', 10],  ['icr', 40]
+			]);
+			var users_options = {
+				pieHole: 0.1,
+				chartArea: {width: 80, height:80},
+				legend: 'none',
+				slices: {  
+					5: {offset: 0.1},
+					}
+
+			};
+			var users_chart = new google.visualization.PieChart(document.getElementById('users'));
+			users_chart.draw(users_data, users_options);
+		}
+        </script>
   </body>
 </html>
