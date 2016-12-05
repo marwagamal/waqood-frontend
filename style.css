@@ -28,6 +28,7 @@ input.sameline{
 }
 .input-group{
 	margin: 10px 0;
+  width: 100%;
 }
 .toggle{
 	float:right;
@@ -242,6 +243,9 @@ input[disabled] + .radio-text{
 	height: 1px;
 	background: #093884;
 }
+.from{
+  margin: 20px 0;
+}
 .heading-line{
   margin: 10px 0;
   width: 55%;
@@ -249,11 +253,11 @@ input[disabled] + .radio-text{
 }
 .text-h{
   padding: 5px 10px;
+  border: 1px solid #093884;
+  border-radius: 10px;
 }
 .heading span{
   margin: auto;
-  border: 1px solid #093884;
-  border-radius: 10px;
   cursor: default;
 }
 .heading {

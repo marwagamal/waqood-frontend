@@ -78,9 +78,9 @@
                     </label></div>
       
 			    	<h4 class="heading"><span class="background-h"></span><span class="text-h">Date</span><span class="background-h"></span></h4>
-			     	<div class="input-group margin-bottom-sm">
-					<input class="form-control" id="from" name="from" type="text" placeholder="11/27/2016 - 12/3/2016">
-					<span class="input-group-addon"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i></span>
+			     	<div class="input-group from">
+					<input class="form-control round" name="from" type="text" placeholder="11/27/2016 - 12/3/2016">
+					<span class="input-group-btn"><button class="btn btn-primary btn-circle"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i></button></span>
 				</div>
 				Live Mode <input data-toggle="toggle" type="checkbox" data-onstyle="info" class="toggle" data-size="mini" data-style="ios"><br/>
 				Refresh When changes <input data-toggle="toggle" data-onstyle="info" type="checkbox" class="toggle" data-size="mini" data-style="ios">
@@ -148,7 +148,7 @@
 	<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 	<script>
 		// initialize date picker with custom ranges 
-		$('#from').daterangepicker({
+		$('.from').daterangepicker({
 		      "ranges": {
 			"Today": [
 			    "12/03/2016",
@@ -182,6 +182,7 @@
 		}, function(start, end, label) {
 		  console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
 		});
+
 	</script>
 	<script>
 	 	$( function() {
