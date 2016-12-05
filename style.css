@@ -119,7 +119,7 @@ input[type="text"]{
 .input-group .form-control:first-child{
   border-right: none;
 }
-.btn-circle{
+.icon-circle, .btn-circle{
   color: #fff;
   background-color: #093884;
   width: 35px;
@@ -128,9 +128,16 @@ input[type="text"]{
   border-radius: 50%;  
   border-color: transparent;
   padding: 7px 0;
+}
+.icon-circle:hover{
+  color: #fff;
+  cursor: default;
+}
+.btn-circle{
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 10px rgba(0, 0, 0, 0.5);
   transition: box-shadow 0.3s;
   -webkit-transition: box-shadow 0.3s;
+
 }
 .btn-circle:hover,
 .btn-cirlce:active,
@@ -243,8 +250,8 @@ input[disabled] + .radio-text{
 	height: 1px;
 	background: #093884;
 }
-.from{
-  margin: 20px 0;
+#from{
+  margin: 15px 0;
 }
 .heading-line{
   margin: 10px 0;
@@ -262,4 +269,18 @@ input[disabled] + .radio-text{
 }
 .heading {
   display: flex;
+}
+.ranges li{
+  color: #093884;
+  font-family: 'Roboto';
+}
+.ranges li:hover, .ranges li.active{
+  background: #093884;
+  border: 1px solid #093884;
+}
+.daterangepicker td.active, .daterangepicker td.active:hover{
+  background-color: #093884;
+}
+thead{
+  font-family: 'Roboto';
 }

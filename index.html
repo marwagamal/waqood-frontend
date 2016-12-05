@@ -15,9 +15,6 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="css/ie10-viewport-bug-workaround.css" rel="stylesheet">
     
-    <!-- Custom styles for this template -->
-    <link href="style.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400|Roboto:100,300,400" rel="stylesheet">
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
     <script src="js/ie-emulation-modes-warning.js"></script>
@@ -28,6 +25,10 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 	<link rel="stylesheet" type="text/css" href="http://cdn.jsdelivr.net/bootstrap.daterangepicker/2/daterangepicker.css" />
+        <!-- Custom styles for this template -->
+    <link href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Titillium+Web:300,400|Roboto:100,300,400" rel="stylesheet">
+
 	<script src="js/jquery-1.12.4.js"></script>
 	<script src="js/jquery-ui.js"></script>
         
@@ -78,9 +79,9 @@
                     </label></div>
       
 			    	<h4 class="heading"><span class="background-h"></span><span class="text-h">Date</span><span class="background-h"></span></h4>
-			     	<div class="input-group from">
-					<input class="form-control round" name="from" type="text" placeholder="11/27/2016 - 12/3/2016">
-					<span class="input-group-btn"><button class="btn btn-primary btn-circle"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i></button></span>
+			     	<div class="input-group" id="from">
+					<input readonly class="form-control round" name="from" id="from" type="text" placeholder="11/27/2016 - 12/3/2016">
+					<span class="input-group-btn"><span class="btn icon-circle"><i class="fa fa-calendar fa-fw" aria-hidden="true"></i></span></span>
 				</div>
 				Live Mode <input data-toggle="toggle" type="checkbox" data-onstyle="info" class="toggle" data-size="mini" data-style="ios"><br/>
 				Refresh When changes <input data-toggle="toggle" data-onstyle="info" type="checkbox" class="toggle" data-size="mini" data-style="ios">
@@ -148,7 +149,8 @@
 	<script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
 	<script>
 		// initialize date picker with custom ranges 
-		$('.from').daterangepicker({
+		$("input[name=from]").daterangepicker({
+      "autoApply": true,
 		      "ranges": {
 			"Today": [
 			    "12/03/2016",
@@ -178,7 +180,6 @@
 		    "alwaysShowCalendars": true,
 		    "startDate": "12/01/2016",
 		    "endDate": "12/03/2016",
-		    "applyClass": "btn-info"
 		}, function(start, end, label) {
 		  console.log("New date range selected: ' + start.format('YYYY-MM-DD') + ' to ' + end.format('YYYY-MM-DD') + ' (predefined range: ' + label + ')");
 		});
