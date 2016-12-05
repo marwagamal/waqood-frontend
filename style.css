@@ -237,20 +237,25 @@ input[disabled] + .radio-text{
   font-size: 18px;
   color: #093884;
 }
+.background-h{
+	width: 100%;
+	height: 1px;
+	background: #093884;
+}
 .heading-line{
   margin: 10px 0;
   width: 55%;
   border-top: 2px solid #093884;;
 }
+.text-h{
+  padding: 5px 10px;
+}
 .heading span{
+  margin: auto;
   border: 1px solid #093884;
   border-radius: 10px;
-  padding:  0 10px;
   cursor: default;
 }
-.heading hr{
-  width: 40%;
-  display: inline-block;
-  border-top-color: #093884;
-  margin: 6px 0;
+.heading {
+  display: flex;
 }
